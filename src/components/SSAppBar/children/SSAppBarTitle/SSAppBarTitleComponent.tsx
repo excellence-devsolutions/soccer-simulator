@@ -1,14 +1,16 @@
-import React from 'react'
+import { Typography } from '@material-ui/core'
+import React, { useContext } from 'react'
+import { SoccerSimulatorContext } from '../../../../provider/Provider'
 
-interface SSAppBarTitleComponentProps {
-  title: string
-}
-
-const SSAppBarTitleComponent: React.FC<SSAppBarTitleComponentProps> = (
-  props: SSAppBarTitleComponentProps
-) => {
-  const { title } = props
-  return <h1>{title}</h1>
+const SSAppBarTitleComponent: React.FC = () => {
+  const { appBar } = useContext(SoccerSimulatorContext)
+  const { title } = appBar
+  const { text } = title
+  return (
+    <Typography variant="h6" data-testid="ss-app-bar-title">
+      {text}
+    </Typography>
+  )
 }
 
 export default SSAppBarTitleComponent
