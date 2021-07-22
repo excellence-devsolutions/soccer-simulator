@@ -1,10 +1,10 @@
 import { createContext } from 'react'
 
-import { initialProps } from '../../components/SSNavigation/store/initial-props'
-import { reducer } from '../../components/SSNavigation/store/reducer'
+import { initialProps } from '../../app/store/initial-props'
+import { reducer } from '../../app/store/reducer'
 
-import { getNavigationSettings } from '../../components/SSNavigation/store/settings'
+import { getAppSettings as getSettings } from '../../app/store/settings'
 
 const SoccerSimulatorContext = createContext(initialProps)
 
-export { getNavigationSettings, initialProps, reducer, SoccerSimulatorContext }
+export { getSettings, initialProps, reducer, SoccerSimulatorContext }

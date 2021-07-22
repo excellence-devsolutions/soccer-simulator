@@ -1,8 +1,9 @@
 import { Reducer, useReducer } from 'react'
 import SSNavigationComponentProps from '../components/SSNavigation/store/interfaces/SSNavigationComponentProps'
 import SSComponentAction from './interfaces/SSComponentAction'
+import { SSComponentActionValue } from './interfaces/SSComponentActionValue'
 import {
-  getNavigationSettings,
+  getSettings,
   initialProps,
   reducer,
   SoccerSimulatorContext,
@@ -10,11 +11,14 @@ import {
 
 const Provider = (props: { children: JSX.Element | JSX.Element[] }) => {
   const { children } = props
-  const [state, dispatch] = useReducer<
-    Reducer<SSNavigationComponentProps, SSComponentAction<string | boolean>>
-  >(reducer, initialProps)
+  const theReducer = reducer as Reducer<
+    SSNavigationComponentProps,
+    SSComponentAction<SSComponentActionValue>
+  >
+  const theInitialProps = initialProps as SSNavigationComponentProps
+  const [state, dispatch] = useReducer(theReducer, theInitialProps)
 
-  const value = getNavigationSettings(state, dispatch)
+  const value = getSettings(state, dispatch)
 
   return (
     <SoccerSimulatorContext.Provider value={value}>

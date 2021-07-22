@@ -1,16 +1,20 @@
 import { CssBaseline } from '@material-ui/core'
-import React, { Fragment, Suspense } from 'react'
+import React, { Suspense } from 'react'
+import { DefaultLayout } from '../layout/DefaultLayout'
 import { SplashPage } from '../pages/SplashPage'
+import Provider from '../provider/Provider'
 import { HomePage } from './helpers/lazy-components'
 
 const App: React.FC = () => {
   return (
-    <Fragment>
+    <Provider>
       <CssBaseline />
-      <Suspense fallback={<SplashPage />}>
-        <HomePage />
-      </Suspense>
-    </Fragment>
+      <DefaultLayout>
+        <Suspense fallback={<SplashPage />}>
+          <HomePage />
+        </Suspense>
+      </DefaultLayout>
+    </Provider>
   )
 }
 

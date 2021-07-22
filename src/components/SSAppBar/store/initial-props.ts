@@ -3,8 +3,9 @@ import SSAppBarMenuButtonComponentProps from '../children/SSAppBarMenuButton/sto
 import { initialProps as initialPropsForTitle } from '../children/SSAppBarTitle/store/initial-props'
 import SSAppBarTitleComponentProps from '../children/SSAppBarTitle/store/interfaces/SSAppBarTitleComponentProps'
 import { initialState } from './initial-state'
+import SSAppBarComponentProps from './interfaces/SSAppBarComponentProps'
 
-const initialProps = {
+const initialProps: SSAppBarComponentProps = {
   menuButton: {
     ...initialPropsForMenuButton,
     ...(initialState.menuButton as SSAppBarMenuButtonComponentProps),

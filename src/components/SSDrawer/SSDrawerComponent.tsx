@@ -6,9 +6,8 @@ import { SSDrawerMenuButton } from './children/SSDrawerMenuButton'
 
 const SSDrawerComponent: React.FC = () => {
   const classes = useStyles()
-  const { drawer } = useContext(SoccerSimulatorContext)
-  const { menuButton } = drawer
-  const { isDrawerOpen } = menuButton
+  const { navigation } = useContext(SoccerSimulatorContext)
+  const { isDrawerOpen } = navigation.drawer.menuButton
 
   return (
     <Drawer

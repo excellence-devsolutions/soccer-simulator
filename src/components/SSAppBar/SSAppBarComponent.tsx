@@ -8,9 +8,8 @@ import { SSAppBarTitle } from './children/SSAppBarTitle'
 
 const SSAppBarComponent: React.FC = () => {
   const classes = useStyles()
-  const { appBar } = useContext(SoccerSimulatorContext)
-  const { menuButton } = appBar
-  const { isDrawerOpen } = menuButton
+  const { navigation } = useContext(SoccerSimulatorContext)
+  const { isDrawerOpen } = navigation.appBar.menuButton
   return (
     <AppBar
       position="fixed"

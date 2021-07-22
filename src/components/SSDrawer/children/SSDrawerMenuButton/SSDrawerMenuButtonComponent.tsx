@@ -8,13 +8,13 @@ import { SoccerSimulatorContext } from '../../../../provider/settings'
 
 const SSDrawerMenuButtonComponent: React.FC = () => {
   const theme = useTheme()
-  const { appBar, drawer } = useContext(SoccerSimulatorContext)
+  const { navigation } = useContext(SoccerSimulatorContext)
 
-  const menuButtonAppBar = appBar.menuButton
+  const menuButtonAppBar = navigation.appBar.menuButton
   const isDrawerOpenForAppBar = menuButtonAppBar.isDrawerOpen
   const toggleButtonForAppBar = menuButtonAppBar.toggleButton
 
-  const menuButtonDrawer = drawer.menuButton
+  const menuButtonDrawer = navigation.drawer.menuButton
   const isDrawerOpenForDrawer = menuButtonDrawer.isDrawerOpen
   const toggleButtonForDrawer = menuButtonDrawer.toggleButton
   return (

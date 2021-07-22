@@ -3,7 +3,8 @@ import React, { useContext } from 'react'
 import { SoccerSimulatorContext } from '../../../../provider/Provider'
 
 const SSAppBarTitleComponent: React.FC = () => {
-  const { appBar } = useContext(SoccerSimulatorContext)
+  const { navigation } = useContext(SoccerSimulatorContext)
+  const { appBar } = navigation
   const { title } = appBar
   const { text } = title
   return (

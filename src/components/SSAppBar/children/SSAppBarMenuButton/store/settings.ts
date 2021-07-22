@@ -1,11 +1,12 @@
 import { Dispatch } from 'react'
 import SSComponentAction from '../../../../../provider/interfaces/SSComponentAction'
+import { SSComponentActionValue } from '../../../../../provider/interfaces/SSComponentActionValue'
 import { actionTypes } from './action-types'
 import SSAppBarMenuButtonComponentProps from './interfaces/SSAppBarMenuButtonComponentProps'
 
 const getMenuButtonSettings = (
   state: SSAppBarMenuButtonComponentProps,
-  dispatch: Dispatch<SSComponentAction<boolean>>
+  dispatch: Dispatch<SSComponentAction<SSComponentActionValue>>
 ) => {
   return {
     toggleButton: (value: boolean) => {

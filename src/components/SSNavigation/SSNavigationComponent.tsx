@@ -1,14 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { SSAppBar } from '../SSAppBar'
 import { SSDrawer } from '../SSDrawer'
-import Provider from '../../provider/Provider'
 
 const SSNavigationComponent: React.FC = () => {
   return (
-    <Provider>
+    <Fragment>
       <SSAppBar />
       <SSDrawer />
-    </Provider>
+    </Fragment>
   )
 }
 

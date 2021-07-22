@@ -1,4 +1,5 @@
 import SSComponentAction from '../../../provider/interfaces/SSComponentAction'
+import { SSComponentActionValue } from '../../../provider/interfaces/SSComponentActionValue'
 import { actionTypes as actionTypesForAppBar } from '../../SSAppBar/store/action-types'
 import { reducer as reducerForAppBar } from '../../SSAppBar/store/reducer'
 import { actionTypes as actionTypesForDrawer } from '../../SSDrawer/store/action-types'
@@ -7,7 +8,7 @@ import SSNavigationComponentProps from './interfaces/SSNavigationComponentProps'
 
 const reducer = (
   state: SSNavigationComponentProps,
-  action: SSComponentAction<string | boolean>
+  action: SSComponentAction<SSComponentActionValue>
 ) => {
   const { type } = action
 
@@ -19,10 +20,7 @@ const reducer = (
   }
 
   if (actionTypesForDrawer.hasOwnProperty(type)) {
-    const drawerState = reducerForDrawer(
-      state.drawer,
-      action as SSComponentAction<boolean>
-    )
+    const drawerState = reducerForDrawer(state.drawer, action)
     const newState = { ...state }
     newState.drawer = drawerState
     return newState
